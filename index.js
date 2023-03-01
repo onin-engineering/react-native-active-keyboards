@@ -26,3 +26,8 @@ export const keyboardEnabled = async key => {
     throw error;
   }
 };
+
+export const getAllKeyboards = async () => {
+  const keyboards = await RNReactNativeActiveKeyboards.keyboardEnabled();
+  return Platform.OS === 'ios' ? keyboards : keyboards.split(',')
+}
