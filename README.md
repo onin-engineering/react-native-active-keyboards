@@ -1,4 +1,4 @@
-# react-native-react-native-active-keyboards [![Node version](https://badge.fury.io/js/react-native-active-keyboards.svg)](http://nodejs.org/download/)
+# react-native-active-keyboards [![Node version](https://badge.fury.io/js/react-native-active-keyboards.svg)](http://nodejs.org/download/)
 
 This is a simple module to let you determine if a specific keyboard is installed. Particularly useful if you have created your own custom keyboard.
 
@@ -6,9 +6,9 @@ This is a simple module to let you determine if a specific keyboard is installed
 
 `$ npm install react-native-active-keyboards --save`
 
-### Mostly automatic installation
+### For iOS
 
-`$ react-native link react-native-active-keyboards`
+`cd ios` && `pod install`
 
 ### Manual installation
 
@@ -23,8 +23,8 @@ This is a simple module to let you determine if a specific keyboard is installed
 
 1.  Open up `android/app/src/main/java/[...]/MainActivity.java`
 
-* Add `import com.reactlibrary.RNReactNativeActiveKeyboardsPackage;` to the imports at the top of the file
-* Add `new RNReactNativeActiveKeyboardsPackage()` to the list returned by the `getPackages()` method
+- Add `import com.reactlibrary.RNReactNativeActiveKeyboardsPackage;` to the imports at the top of the file
+- Add `new RNReactNativeActiveKeyboardsPackage()` to the list returned by the `getPackages()` method
 
 2.  Append the following lines to `android/settings.gradle`:
     ```
@@ -39,13 +39,18 @@ This is a simple module to let you determine if a specific keyboard is installed
 ## Usage
 
 ```javascript
-import { keyboardEnabled } from "react-native-active-keyboards";
+import { keyboardEnabled, getAllKeyboards } from "react-native-active-keyboards";
 
 [...]
   async componentWillMount() {
     // @param keyboardId
     const enabled = await keyboardEnabled("keyboardName");
     console.log("IN APP", enabled);
+
+    // Get all keyboards
+    const keyboards = await getAllkeyboards();
+     // returns Array
+    console.log("Keyboards", keyboards)
   }
 [...]
 ```
