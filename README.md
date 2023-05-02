@@ -23,7 +23,7 @@ This is a simple module to let you determine if a specific keyboard is installed
 
 1.  Open up `android/app/src/main/java/[...]/MainActivity.java`
 
-* Add `import com.reactlibrary.RNReactNativeActiveKeyboardsPackage;` to the imports at the top of the file
+* Add `import com.activekeyboards.RNReactNativeActiveKeyboardsPackage;` to the imports at the top of the file
 * Add `new RNReactNativeActiveKeyboardsPackage()` to the list returned by the `getPackages()` method
 
 2.  Append the following lines to `android/settings.gradle`:

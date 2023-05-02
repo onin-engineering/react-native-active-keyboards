@@ -1,5 +1,5 @@
 
-package com.reactlibrary;
+package com.activekeyboards;
 
 import android.util.Log;
 import android.view.inputmethod.InputMethodInfo;
